@@ -16,7 +16,7 @@ export class MockDataService {
         startDate: "2025-06-01T21:00:00+02:00",
         endDate: "2025-06-30T21:00:00+02:00",
         affectedSection: "Section 1-2",
-        geoPosition: "46.9545892,7.0653042",
+        geoPosition: "",
         imageUrl: "orm_basel_sbb.png",
         status: "planned",
         restrictions: [

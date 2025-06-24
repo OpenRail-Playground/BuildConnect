@@ -8,8 +8,8 @@ import * as L from 'leaflet';
 })
 export class MapComponent implements OnInit {
 
-  @Input() latitude: number = 51.505;  // Standardwert
-  @Input() longitude: number = -0.09;  // Standardwert
+  @Input() latitude!: number;  // Standardwert
+  @Input() longitude!: number;  // Standardwert
 
   constructor() { }
 
@@ -25,7 +25,7 @@ export class MapComponent implements OnInit {
 
     // Füge einen Marker an den dynamischen Koordinaten hinzu
     L.marker([this.latitude, this.longitude]).addTo(map)
-      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-      .openPopup();
+      //.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+      //.openPopup();
   }
 }
