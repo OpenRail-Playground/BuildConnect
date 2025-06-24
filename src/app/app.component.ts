@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core'
+import {BaustellenListeComponent} from './baustellen-liste/baustellen-liste.component'
+import {RouterOutlet} from '@angular/router'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [BaustellenListeComponent, RouterOutlet]
 })
 export class AppComponent {
-  title = 'BuildConnect';
+  title = 'BuildConnect'
 }
