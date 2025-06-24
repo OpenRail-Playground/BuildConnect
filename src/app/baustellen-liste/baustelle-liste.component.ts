@@ -10,11 +10,12 @@ import {
   MatTableModule
 } from '@angular/material/table'
 import {AsyncPipe} from '@angular/common'
+import {ActivatedRoute, Router} from '@angular/router'
 
 @Component({
   selector: 'app-baustellen-liste',
-  templateUrl: './baustellen-liste.component.html',
-  styleUrl: './baustellen-liste.component.scss',
+  templateUrl: './baustelle-liste.component.html',
+  styleUrl: './baustelle-liste.component.scss',
   imports: [
     MatTable,
     MatHeaderCellDef,
@@ -25,22 +26,32 @@ import {AsyncPipe} from '@angular/common'
     MatTableModule,
   ],
 })
-export class BaustellenListeComponent implements OnInit {
+export class BaustelleListeComponent implements OnInit {
 
-  protected readonly mockData$ = new BehaviorSubject<MockData[]>([])
+  protected readonly mockDataList$ = new BehaviorSubject<MockData[]>([])
 
   protected readonly displayedColumns = [
-    "id_column",
+    "id",
     "name",
   ]
 
   constructor(
     private readonly mockDataService: MockDataService,
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute,
   ) {
   }
 
   ngOnInit(): void {
     let mockData = this.mockDataService.getMockData()
-    this.mockData$.next(mockData)
+    this.mockDataList$.next(mockData)
+  }
+
+  async onClickRow(mockData: MockData): Promise<void> {
+
+    if (mockData == null) return
+
+    const path = "./" + mockData.id
+    await this.router.navigate([path], {relativeTo: this.activatedRoute})
   }
 }

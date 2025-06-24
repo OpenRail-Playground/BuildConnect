@@ -1,10 +1,9 @@
 import {Component} from '@angular/core'
 import {RouterOutlet} from '@angular/router'
-import {BaustellenListeComponent} from './baustellen-liste/baustellen-liste.component'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, BaustellenListeComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
