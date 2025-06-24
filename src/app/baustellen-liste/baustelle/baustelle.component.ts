@@ -4,15 +4,17 @@ import {MockData, MockDataService} from '../../../service/mock-data.service'
 import {ActivatedRoute} from '@angular/router'
 import {AsyncPipe, NgOptimizedImage} from '@angular/common'
 import {MatCard, MatCardContent} from '@angular/material/card'
+import {MapComponent} from "../../map/map.component";
 
 @Component({
   selector: 'app-baustelle',
-  imports: [
-    AsyncPipe,
-    MatCard,
-    MatCardContent,
-    NgOptimizedImage
-  ],
+    imports: [
+        AsyncPipe,
+        MatCard,
+        MatCardContent,
+        NgOptimizedImage,
+        MapComponent
+    ],
   templateUrl: './baustelle.component.html',
   styleUrl: './baustelle.component.scss'
 })
