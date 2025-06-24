@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import * as L from 'leaflet';
-import {Icon, icon} from 'leaflet';
+import {Component, Input, OnInit} from '@angular/core'
+import * as L from 'leaflet'
+import {Icon, icon} from 'leaflet'
 
 @Component({
     selector: 'app-map',
@@ -9,21 +9,21 @@ import {Icon, icon} from 'leaflet';
 })
 export class MapComponent implements OnInit {
 
-    @Input() latitude!: number;  // Standardwert
-    @Input() longitude!: number;  // Standardwert
+    @Input() latitude!: number  // Standardwert
+    @Input() longitude!: number  // Standardwert
 
     constructor() {
     }
 
     ngOnInit(): void {
         // Initialisiere die Karte mit dynamischen Koordinaten
-        const map = L.map('map').setView([this.latitude, this.longitude], 13);
+        const map = L.map('map').setView([this.latitude, this.longitude], 13)
 
         // Füge eine OpenStreetMap-Kachel-Ebene hinzu
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
-        }).addTo(map);
+        }).addTo(map)
 
         // Füge einen Marker an den dynamischen Koordinaten hinzu
         L.marker([this.latitude, this.longitude], {

@@ -4,10 +4,10 @@ import {BaustelleComponent} from './baustellen-liste/baustelle/baustelle.compone
 import {AboutComponent} from './about/about.component'
 
 export const routes: Routes = [
-  <Route>{path: "baustelle/:id", component: BaustelleComponent},
-  <Route>{path: "baustelle", component: BaustelleListeComponent},
-  <Route>{path: "about", component: AboutComponent},
+    <Route>{path: "baustelle/:id", component: BaustelleComponent},
+    <Route>{path: "baustelle", component: BaustelleListeComponent},
+    <Route>{path: "about", component: AboutComponent},
 
-  // Default redirect
-  <Route>{path: '**', redirectTo: 'baustelle'},
+    // Default redirect
+    <Route>{path: '**', redirectTo: 'baustelle'},
 ]

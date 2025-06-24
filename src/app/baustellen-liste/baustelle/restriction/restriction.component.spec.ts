@@ -1,18 +1,18 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing'
 
-import {AboutComponent} from './about.component'
+import {RestrictionComponent} from './restriction.component'
 
-describe('AboutComponent', () => {
-    let component: AboutComponent
-    let fixture: ComponentFixture<AboutComponent>
+describe('RestrictionComponent', () => {
+    let component: RestrictionComponent
+    let fixture: ComponentFixture<RestrictionComponent>
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [AboutComponent]
+            imports: [RestrictionComponent]
         })
             .compileComponents()
 
-        fixture = TestBed.createComponent(AboutComponent)
+        fixture = TestBed.createComponent(RestrictionComponent)
         component = fixture.componentInstance
         fixture.detectChanges()
     })

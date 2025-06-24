@@ -1,27 +1,36 @@
 <h1>Baustelle</h1>
-@if (mockData$ | async; as mockData) {
+@if (constructionDossier$ | async; as constructionDossier) {
     <mat-card>
         <mat-card-content>
             <table class="main-table">
                 <tbody>
                 <tr>
                     <td>Id</td>
-                    <td>{{ mockData.id }}</td>
+                    <td>{{ constructionDossier.id }}</td>
                 </tr>
                 <tr>
                     <td>Name</td>
-                    <td>{{ mockData.name }}</td>
+                    <td>{{ constructionDossier.name }}</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>{{ constructionDossier.startDate }} - {{ constructionDossier.endDate }}</td>
+                </tr>
+                <tr>
+                    <td>Affected Sections</td>
+                    <td>{{ constructionDossier.affectedSection }}</td>
                 </tr>
                 <tr>
                     <td>Status</td>
-                    <td>{{ mockData.status }}</td>
+                    <td>{{ constructionDossier.status }}</td>
                 </tr>
                 <tr>
                     <td>Karte</td>
-                    <app-map *ngIf="hasGeoPosition(mockData.geoPosition)"
-                             [latitude]="getGeoPosition(mockData.geoPosition!).lat"
-                             [longitude]="getGeoPosition(mockData.geoPosition!).lng" />
-                    <img *ngIf="!hasGeoPosition(mockData.geoPosition)" ngSrc="{{ mockData.imageUrl }}" width="400"
+                    <app-map *ngIf="hasGeoPosition(constructionDossier.geoPosition)"
+                             [latitude]="getGeoPosition(constructionDossier.geoPosition!).lat"
+                             [longitude]="getGeoPosition(constructionDossier.geoPosition!).lng"/>
+                    <img *ngIf="!hasGeoPosition(constructionDossier.geoPosition)"
+                         ngSrc="{{ constructionDossier.imageUrl }}" width="400"
                          height="300" alt="Karte"/>
                 </tr>
                 </tbody>

@@ -4,10 +4,10 @@ import {ConstructionDossier, MockDataService} from '../../../service/mock-data.s
 import {ActivatedRoute} from '@angular/router'
 import {AsyncPipe, NgIf, NgOptimizedImage} from '@angular/common'
 import {MatCard, MatCardContent} from '@angular/material/card'
-import {MapComponent} from "../../map/map.component";
+import {MapComponent} from "../../map/map.component"
 
 @Component({
-  selector: 'app-baustelle',
+    selector: 'app-baustelle',
     imports: [
         AsyncPipe,
         MatCard,
@@ -16,36 +16,36 @@ import {MapComponent} from "../../map/map.component";
         MapComponent,
         NgIf
     ],
-  templateUrl: './baustelle.component.html',
-  styleUrl: './baustelle.component.scss'
+    templateUrl: './baustelle.component.html',
+    styleUrl: './baustelle.component.scss'
 })
 export class BaustelleComponent implements OnInit {
 
-  protected readonly mockData$ = new BehaviorSubject<ConstructionDossier | null | undefined>(undefined)
+    protected readonly constructionDossier$ = new BehaviorSubject<ConstructionDossier | null | undefined>(undefined)
 
-  constructor(
-    private readonly mockDataService: MockDataService,
-    private readonly activatedRoute: ActivatedRoute,
-  ) {
-  }
+    constructor(
+        private readonly mockDataService: MockDataService,
+        private readonly activatedRoute: ActivatedRoute,
+    ) {
+    }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
 
-    this.activatedRoute.params
-      .subscribe(params => {
-        let id = params['id']
-        let mockDataList = this.mockDataService.getMockData()
-        const dataset = mockDataList.find(constructionDossier => constructionDossier.id === id)
-        this.mockData$.next(dataset)
-      })
-  }
+        this.activatedRoute.params
+            .subscribe(params => {
+                let id = params['id']
+                let mockDataList = this.mockDataService.getMockData()
+                const dataset = mockDataList.find(constructionDossier => constructionDossier.id === id)
+                this.constructionDossier$.next(dataset)
+            })
+    }
 
-  hasGeoPosition(geoPosition: string | undefined): boolean {
-    return geoPosition !== undefined && geoPosition.trim() !== '' && geoPosition.includes(',');
-  }
+    hasGeoPosition(geoPosition: string | undefined): boolean {
+        return geoPosition !== undefined && geoPosition.trim() !== '' && geoPosition.includes(',')
+    }
 
-  getGeoPosition(geoPosition: string): { lat: number, lng: number } {
-    const [lat, lng] = geoPosition.split(',').map(Number);
-    return {lat, lng};
-  }
+    getGeoPosition(geoPosition: string): { lat: number, lng: number } {
+        const [lat, lng] = geoPosition.split(',').map(Number)
+        return {lat, lng}
+    }
 }

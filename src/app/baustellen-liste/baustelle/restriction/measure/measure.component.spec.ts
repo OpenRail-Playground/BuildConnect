@@ -1,18 +1,18 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing'
 
-import {AboutComponent} from './about.component'
+import {MeasureComponent} from './measure.component'
 
-describe('AboutComponent', () => {
-    let component: AboutComponent
-    let fixture: ComponentFixture<AboutComponent>
+describe('MeasureComponent', () => {
+    let component: MeasureComponent
+    let fixture: ComponentFixture<MeasureComponent>
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [AboutComponent]
+            imports: [MeasureComponent]
         })
             .compileComponents()
 
-        fixture = TestBed.createComponent(AboutComponent)
+        fixture = TestBed.createComponent(MeasureComponent)
         component = fixture.componentInstance
         fixture.detectChanges()
     })
