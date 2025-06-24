@@ -4,6 +4,7 @@ import {ConstructionDossier, MockDataService} from '../../../service/mock-data.s
 import {ActivatedRoute} from '@angular/router'
 import {AsyncPipe, NgOptimizedImage} from '@angular/common'
 import {MatCard, MatCardContent} from '@angular/material/card'
+import {RestrictionComponent} from './restriction/restriction.component'
 
 @Component({
   selector: 'app-baustelle',
@@ -11,14 +12,15 @@ import {MatCard, MatCardContent} from '@angular/material/card'
     AsyncPipe,
     MatCard,
     MatCardContent,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RestrictionComponent
   ],
   templateUrl: './baustelle.component.html',
   styleUrl: './baustelle.component.scss'
 })
 export class BaustelleComponent implements OnInit {
 
-  protected readonly mockData$ = new BehaviorSubject<ConstructionDossier | null | undefined>(undefined)
+  protected readonly constructionDossier$ = new BehaviorSubject<ConstructionDossier | null | undefined>(undefined)
 
   constructor(
     private readonly mockDataService: MockDataService,
@@ -33,7 +35,7 @@ export class BaustelleComponent implements OnInit {
         let id = params['id']
         let mockDataList = this.mockDataService.getMockData()
         const dataset = mockDataList.find(constructionDossier => constructionDossier.id === id)
-        this.mockData$.next(dataset)
+        this.constructionDossier$.next(dataset)
       })
   }
 }

@@ -1,0 +1,32 @@
+<table>
+  @for (restriction of capacityRestrictions ?? []; track restriction.id) {
+    <tr>
+      <td>Date</td>
+      <td>{{ restriction.startDate }} - {{ restriction.endDate }}</td>
+    </tr>
+    <tr>
+      <td>AffectedRoute</td>
+      <td>{{ restriction.affectedRoute }}</td>
+    </tr>
+    <tr>
+      <td>Milage</td>
+      <td>{{ restriction.startMilage }} - {{ restriction.endMilage }}</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>{{ restriction.type }}</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>{{ restriction.status }}</td>
+    </tr>
+    <table>
+      <tr>
+        <td>Restrictions:</td>
+        <td>
+          <app-measure [measures]="restriction.measures"/>
+        </td>
+      </tr>
+    </table>
+  }
+</table>
