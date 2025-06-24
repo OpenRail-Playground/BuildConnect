@@ -29,9 +29,6 @@
                     <app-map *ngIf="hasGeoPosition(constructionDossier.geoPosition)"
                              [latitude]="getGeoPosition(constructionDossier.geoPosition!).lat"
                              [longitude]="getGeoPosition(constructionDossier.geoPosition!).lng"/>
-                    <img *ngIf="!hasGeoPosition(constructionDossier.geoPosition)"
-                         ngSrc="{{ constructionDossier.imageUrl }}" width="400"
-                         height="300" alt="Karte"/>
                 </tr>
                 </tbody>
             </table>

@@ -17,7 +17,6 @@ export class MockDataService {
                 endDate: "2025-06-30T21:00:00+02:00",
                 affectedSection: "Section 1-2",
                 geoPosition: "46.9545892,7.0653042",
-                imageUrl: "orm_basel_sbb.png",
                 status: "planned",
                 restrictions: [
                     <CapacityRestriction>{
@@ -54,7 +53,6 @@ export class MockDataService {
                 endDate: "2025-06-30T21:00:00+02:00",
                 affectedSection: "Section 1-2",
                 geoPosition: "46.9545892,7.0653042",
-                imageUrl: "orm_basel_sbb.png",
                 status: "planned",
                 restrictions: [
                     <CapacityRestriction>{
@@ -95,7 +93,6 @@ export interface ConstructionDossier {
     endDate: string; // ISO 8901 '2025-06-024T21:00:00+02:00'
     affectedSection: string;
     geoPosition?: string; // GPS Koordinate 46.9545892,7.0653042
-    imageUrl?: string;
     status: string; // "planned", "confirmed", "in consultation"
     restrictions: Array<CapacityRestriction>;
 }
