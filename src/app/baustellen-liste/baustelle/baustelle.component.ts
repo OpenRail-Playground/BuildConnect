@@ -7,35 +7,35 @@ import {MatCard, MatCardContent} from '@angular/material/card'
 import {RestrictionComponent} from './restriction/restriction.component'
 
 @Component({
-  selector: 'app-baustelle',
-  imports: [
-    AsyncPipe,
-    MatCard,
-    MatCardContent,
-    NgOptimizedImage,
-    RestrictionComponent
-  ],
-  templateUrl: './baustelle.component.html',
-  styleUrl: './baustelle.component.scss'
+    selector: 'app-baustelle',
+    imports: [
+        AsyncPipe,
+        MatCard,
+        MatCardContent,
+        NgOptimizedImage,
+        RestrictionComponent
+    ],
+    templateUrl: './baustelle.component.html',
+    styleUrl: './baustelle.component.scss'
 })
 export class BaustelleComponent implements OnInit {
 
-  protected readonly constructionDossier$ = new BehaviorSubject<ConstructionDossier | null | undefined>(undefined)
+    protected readonly constructionDossier$ = new BehaviorSubject<ConstructionDossier | null | undefined>(undefined)
 
-  constructor(
-    private readonly mockDataService: MockDataService,
-    private readonly activatedRoute: ActivatedRoute,
-  ) {
-  }
+    constructor(
+        private readonly mockDataService: MockDataService,
+        private readonly activatedRoute: ActivatedRoute,
+    ) {
+    }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
 
-    this.activatedRoute.params
-      .subscribe(params => {
-        let id = params['id']
-        let mockDataList = this.mockDataService.getMockData()
-        const dataset = mockDataList.find(constructionDossier => constructionDossier.id === id)
-        this.constructionDossier$.next(dataset)
-      })
-  }
+        this.activatedRoute.params
+            .subscribe(params => {
+                let id = params['id']
+                let mockDataList = this.mockDataService.getMockData()
+                const dataset = mockDataList.find(constructionDossier => constructionDossier.id === id)
+                this.constructionDossier$.next(dataset)
+            })
+    }
 }

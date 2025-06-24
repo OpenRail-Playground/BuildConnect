@@ -1,40 +1,40 @@
 <h1>Baustelle</h1>
 @if (constructionDossier$ | async; as constructionDossier) {
-  <mat-card>
-    <mat-card-content>
-      <table class="main-table">
-        <tbody>
-        <tr>
-          <td>Id</td>
-          <td>{{ constructionDossier.id }}</td>
-        </tr>
-        <tr>
-          <td>Name</td>
-          <td>{{ constructionDossier.name }}</td>
-        </tr>
-        <tr>
-          <td>Date</td>
-          <td>{{ constructionDossier.startDate }} - {{ constructionDossier.endDate }}</td>
-        </tr>
-        <tr>
-          <td>Affected Sections</td>
-          <td>{{ constructionDossier.affectedSection }}</td>
-        </tr>
-        <tr>
-          <td>Status</td>
-          <td>{{ constructionDossier.status }}</td>
-        </tr>
-        <tr>
-          <td>Karte</td>
-          <img ngSrc="{{ constructionDossier.imageUrl }}" width="400" height="300" alt="Karte"/>
-        </tr>
-        <tr>
-          <td>Restrictions:</td>
-          <td>
-            <app-restriction [capacityRestrictions]="constructionDossier.restrictions"/>
-          </td>
-        </tbody>
-      </table>
-    </mat-card-content>
-  </mat-card>
+    <mat-card>
+        <mat-card-content>
+            <table class="main-table">
+                <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td>{{ constructionDossier.id }}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{ constructionDossier.name }}</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>{{ constructionDossier.startDate }} - {{ constructionDossier.endDate }}</td>
+                </tr>
+                <tr>
+                    <td>Affected Sections</td>
+                    <td>{{ constructionDossier.affectedSection }}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>{{ constructionDossier.status }}</td>
+                </tr>
+                <tr>
+                    <td>Karte</td>
+                    <img ngSrc="{{ constructionDossier.imageUrl }}" width="400" height="300" alt="Karte"/>
+                </tr>
+                <tr>
+                    <td>Restrictions:</td>
+                    <td>
+                        <app-restriction [capacityRestrictions]="constructionDossier.restrictions"/>
+                    </td>
+                </tbody>
+            </table>
+        </mat-card-content>
+    </mat-card>
 }
