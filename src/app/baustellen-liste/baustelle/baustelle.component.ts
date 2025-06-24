@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {BehaviorSubject} from 'rxjs'
-import {MockData, MockDataService} from '../../../service/mock-data.service'
+import {ConstructionDossier, MockDataService} from '../../../service/mock-data.service'
 import {ActivatedRoute} from '@angular/router'
 import {AsyncPipe, NgOptimizedImage} from '@angular/common'
 import {MatCard, MatCardContent} from '@angular/material/card'
@@ -18,7 +18,7 @@ import {MatCard, MatCardContent} from '@angular/material/card'
 })
 export class BaustelleComponent implements OnInit {
 
-  protected readonly mockData$ = new BehaviorSubject<MockData | null | undefined>(undefined)
+  protected readonly mockData$ = new BehaviorSubject<ConstructionDossier | null | undefined>(undefined)
 
   constructor(
     private readonly mockDataService: MockDataService,
@@ -30,9 +30,9 @@ export class BaustelleComponent implements OnInit {
 
     this.activatedRoute.params
       .subscribe(params => {
-        let id = Number(params['id'])
+        let id = params['id']
         let mockDataList = this.mockDataService.getMockData()
-        const dataset = mockDataList.find(mockData => mockData.id === id)
+        const dataset = mockDataList.find(constructionDossier => constructionDossier.id === id)
         this.mockData$.next(dataset)
       })
   }

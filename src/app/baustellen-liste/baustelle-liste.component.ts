@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {MockData, MockDataService} from '../../service/mock-data.service'
+import {ConstructionDossier, MockDataService} from '../../service/mock-data.service'
 import {BehaviorSubject} from 'rxjs'
 import {
   MatCellDef,
@@ -28,7 +28,7 @@ import {ActivatedRoute, Router} from '@angular/router'
 })
 export class BaustelleListeComponent implements OnInit {
 
-  protected readonly mockDataList$ = new BehaviorSubject<MockData[]>([])
+  protected readonly mockDataList$ = new BehaviorSubject<ConstructionDossier[]>([])
 
   protected readonly displayedColumns = [
     "id",
@@ -47,11 +47,11 @@ export class BaustelleListeComponent implements OnInit {
     this.mockDataList$.next(mockData)
   }
 
-  async onClickRow(mockData: MockData): Promise<void> {
+  async onClickRow(constructionDossier: ConstructionDossier): Promise<void> {
 
-    if (mockData == null) return
+    if (constructionDossier == null) return
 
-    const path = "./" + mockData.id
+    const path = "./" + constructionDossier.id
     await this.router.navigate([path], {relativeTo: this.activatedRoute})
   }
 }
