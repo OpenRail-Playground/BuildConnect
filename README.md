@@ -19,3 +19,11 @@ This project has been initiated during the [Hack4Rail 2025](https://hack4rail.ev
 <!-- If you decide for another license, please change it here, and exchange the LICENSE file -->
 
 The content of this repository is licensed under the [Apache 2.0 license](LICENSE).
+
+## Deploy
+
+The project can be deployed to github pages by using the following command:
+
+ng deploy --base-href=/BuildConnect/
+
+https://openrail-playground.github.io/BuildConnect/baustelle

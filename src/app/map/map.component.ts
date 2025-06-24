@@ -20,9 +20,13 @@ export class MapComponent implements OnInit {
         const map = L.map('map').setView([this.latitude, this.longitude], 13)
 
         // Füge eine OpenStreetMap-Kachel-Ebene hinzu
+
+        //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
             attribution: '© OpenStreetMap'
+        }).addTo(map)
+        L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
+            //attribution: '© OpenStreetMap'
         }).addTo(map)
 
         // Füge einen Marker an den dynamischen Koordinaten hinzu
