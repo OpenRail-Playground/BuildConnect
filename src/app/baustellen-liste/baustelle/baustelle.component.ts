@@ -2,9 +2,10 @@ import {Component, OnInit} from '@angular/core'
 import {BehaviorSubject} from 'rxjs'
 import {ConstructionDossier, MockDataService} from '../../../service/mock-data.service'
 import {ActivatedRoute} from '@angular/router'
-import {AsyncPipe, NgIf, NgOptimizedImage} from '@angular/common'
+import {AsyncPipe} from '@angular/common'
 import {MatCard, MatCardContent} from '@angular/material/card'
-import {MapComponent} from "../../map/map.component"
+import {MapComponent} from '../../map/map.component'
+import {RestrictionComponent} from './restriction/restriction.component'
 
 @Component({
     selector: 'app-baustelle',
@@ -12,9 +13,9 @@ import {MapComponent} from "../../map/map.component"
         AsyncPipe,
         MatCard,
         MatCardContent,
-        NgOptimizedImage,
         MapComponent,
-        NgIf
+        RestrictionComponent,
+
     ],
     templateUrl: './baustelle.component.html',
     styleUrl: './baustelle.component.scss'
@@ -40,11 +41,15 @@ export class BaustelleComponent implements OnInit {
             })
     }
 
-    hasGeoPosition(geoPosition: string | undefined): boolean {
+    private hasGeoPosition(geoPosition?: string): boolean {
         return geoPosition !== undefined && geoPosition.trim() !== '' && geoPosition.includes(',')
     }
 
-    getGeoPosition(geoPosition: string): { lat: number, lng: number } {
+    getGeoPosition(geoPosition?: string): { lat: number, lng: number } | undefined {
+
+        if (!geoPosition) return undefined
+        if (!this.hasGeoPosition(geoPosition)) return undefined
+
         const [lat, lng] = geoPosition.split(',').map(Number)
         return {lat, lng}
     }

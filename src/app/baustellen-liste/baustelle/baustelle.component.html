@@ -26,9 +26,17 @@
                 </tr>
                 <tr>
                     <td>Karte</td>
-                    <app-map *ngIf="hasGeoPosition(constructionDossier.geoPosition)"
-                             [latitude]="getGeoPosition(constructionDossier.geoPosition!).lat"
-                             [longitude]="getGeoPosition(constructionDossier.geoPosition!).lng"/>
+                    @if (getGeoPosition(constructionDossier.geoPosition); as geo) {
+                        <app-map
+                            [latitude]="geo.lat"
+                            [longitude]="geo.lng"/>
+                    }
+                </tr>
+                <tr>
+                    <td>Restrictions:</td>
+                    <td>
+                        <app-restriction [capacityRestrictions]="constructionDossier.restrictions"/>
+                    </td>
                 </tr>
                 </tbody>
             </table>
