@@ -1,17 +1,16 @@
 <table>
+    <thead>
+    <tr>
+        <th>Affected Trains</th>
+        <th>Action Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
     <tbody>
         @for (measure of measures ?? []; track measure.id) {
-
             <tr>
-                <td>affectedTrains</td>
                 <td>{{ measure.affectedTrains }}</td>
-            </tr>
-            <tr>
-                <td>actionType</td>
                 <td>{{ measure.actionType }}</td>
-            </tr>
-            <tr>
-                <td>description</td>
                 <td>{{ measure.description }}</td>
             </tr>
         }
