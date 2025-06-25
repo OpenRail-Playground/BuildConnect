@@ -10,6 +10,13 @@
                 <tr>
                     <td>Id</td>
                     <td>{{ constructionDossier.id }}</td>
+                    <td rowspan="4">
+                        @if (getGeoPosition(constructionDossier.geoPosition); as geo) {
+                            <app-map
+                                [latitude]="geo.lat"
+                                [longitude]="geo.lng"/>
+                        }
+                    </td>
                 </tr>
                 <tr>
                     <td>Name</td>
@@ -26,14 +33,6 @@
                 <tr>
                     <td>Status</td>
                     <td>{{ constructionDossier.status }}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    @if (getGeoPosition(constructionDossier.geoPosition); as geo) {
-                        <app-map
-                            [latitude]="geo.lat"
-                            [longitude]="geo.lng"/>
-                    }
                 </tr>
                 </tbody>
             </table>
