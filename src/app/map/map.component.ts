@@ -24,8 +24,8 @@ export class MapComponent implements OnInit {
 
         //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         var API_KEY = "499fbbcf-2dd9-4197-b580-882521a0c74f";
-https://api.stadiamaps.com/tz/lookup/v1?lat=59.43696&lng=24.75357&api_key=YOUR-API-KEY
-        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png?api_key=API_KEY', {
+        https://api.stadiamaps.com/tz/lookup/v1?lat=59.43696&lng=24.75357&api_key=YOUR-API-KEY
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png?api_key='+API_KEY, {
             attribution: 'Data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, Style: <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> <a href="http://www.openrailwaymap.org/">OpenRailwayMap</a>'
         }).addTo(map)
         L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
