@@ -11,76 +11,45 @@ export class MockDataService {
     getMockData(): ConstructionDossier[] {
         return [
             <ConstructionDossier>{
-                id: "DE-1234",
-                name: "Strecke 0815 gesperrt",
-                startDate: "2025-06-01T21:00:00+02:00",
-                endDate: "2025-06-30T21:00:00+02:00",
-                affectedSection: "Section 1-2",
-                geoPosition: "46.9545892,7.0653042",
-                status: "planned",
+                id: "AT-218",
+                name: "Strecke Schwarzach-St. Veit - Mallnitz-Obervellach gesperrt",
+                startDate: "2024-11-18T21:00:00+02:00",
+                endDate: "2025-07-13T21:00:00+02:00",
+                affectedSection: "22201",
+                geoPosition: "46.996801, 13.168222",
+                status: "undergoing",
                 restrictions: [
                     <CapacityRestriction>{
-                        id: "1",
-                        startDate: "2025-06-01T21:00:00+02:00",
-                        endDate: "2025-06-30T21:00:00+02:00",
-                        affectedRoute: "Route A",
-                        affectedPoints: ["Point 1", "Point 2"],
-                        startMilage: 10,
-                        endMilage: 12,
-                        type: "Total disruption",
-                        status: "planned",
+                        id: "R1",
+                        startDate: "2024-11-18T21:00:00+02:00",
+                        endDate: "2025-07-13T21:00:00+02:00",
+                        affectedRoute: "22201",
+                        affectedPoints: ["Schwarzach-St. Veit", "Mallnitz-Obervellach"],
+                        startMilage: 66.546,
+                        endMilage: 45.932,
+                        type: "Partial disruption",
+                        status: "undergoing",
                         measures: [
                             <Measure>{
-                                id: "1",
-                                affectedTrains: ["Train 101", "Train 102"],
-                                actionType: "Delay",
-                                description: "Expected delay of 30 minutes"
+                                id: "M1",
+                                affectedTrains: ["EC110", "IC111", "IC113"],
+                                actionType: "Detour",
+                                description: "Expected delay of 45 minutes"
                             },
                             <Measure>{
-                                id: "2",
-                                affectedTrains: ["Train 103"],
+                                id: "M2",
+                                affectedTrains: ["Train RJ 101"],
                                 actionType: "Detour",
-                                description: "Detour via Route B"
-                            }
-                        ]
-                    }
-                ],
-            },
-            <ConstructionDossier>{
-                id: "DE-0815",
-                name: "Strecke 0815 gesperrt",
-                startDate: "2025-06-01T21:00:00+02:00",
-                endDate: "2025-06-30T21:00:00+02:00",
-                affectedSection: "Section 1-2",
-                geoPosition: "46.9545892,7.0653042",
-                status: "planned",
-                restrictions: [
-                    <CapacityRestriction>{
-                        id: "1",
-                        startDate: "2025-06-01T21:00:00+02:00",
-                        endDate: "2025-06-30T21:00:00+02:00",
-                        affectedRoute: "Route A",
-                        affectedPoints: ["Point 1", "Point 2"],
-                        startMilage: 10,
-                        endMilage: 12,
-                        type: "Total disruption",
-                        status: "planned",
-                        measures: [
-                            <Measure>{
-                                id: "1",
-                                affectedTrains: ["Train 101", "Train 102"],
-                                actionType: "Delay",
-                                description: "Expected delay of 30 minutes"
+                                description: "Detour via Linz"
                             },
                             <Measure>{
-                                id: "2",
-                                affectedTrains: ["Train 103"],
-                                actionType: "Detour",
-                                description: "Detour via Route B"
-                            }
-                        ]
-                    }
-                ],
+                                id: "M3",
+                                affectedTrains: ["Train RE 1501"],
+                                actionType: "Cancellation",
+                                description: "Train cancelled due to construction"
+                            }]
+                    },
+                ]
             },
             <ConstructionDossier>{
                 id: "AT-001",
@@ -138,7 +107,8 @@ export class MockDataService {
                         description: "Detour via Route C"
                     }]
                 }]
-            }, <ConstructionDossier>{
+            },
+            <ConstructionDossier>{
                 id: "DE-001",
                 name: "Strecke Berlin - München gesperrt",
                 startDate: "2025-06-16T21:00:00+02:00",

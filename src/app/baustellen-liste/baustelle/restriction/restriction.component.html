@@ -9,29 +9,32 @@
                     <th>AffectedRoute</th>
                     <th>Milage</th>
                     <th>Type</th>
+                    <th>Status</th>
                 </tr>
                 </thead>
                 <tbody>
                     @for (restriction of capacityRestrictions ?? []; track restriction.id) {
                         <tr>
-
-                            <td>{{ restriction.startDate | formatDateTime }}
-                                - {{ restriction.endDate | formatDateTime }}
+                            <td>
+                                From: {{ restriction.startDate | formatDateTime }}<br>
+                                To: {{ restriction.endDate | formatDateTime }}
                             </td>
                             <td>{{ restriction.affectedRoute }}</td>
-                            <td>{{ restriction.startMilage }} - {{ restriction.endMilage }}</td>
+                            <td>{{ restriction.startMilage }}<br>{{ restriction.endMilage }}</td>
                             <td>{{ restriction.type }}</td>
                             <td>{{ restriction.status }}</td>
                         </tr>
                         <tr>
-                            <table class="striped-table">
-                                <tr>
-                                    <td>Restrictions:</td>
-                                    <td>
-                                        <app-measure [measures]="restriction.measures"/>
-                                    </td>
-                                </tr>
-                            </table>
+                            <td [colSpan]="6">
+                                <table class="striped-table">
+                                    <tr>
+                                        <td>Restrictions:</td>
+                                        <td>
+                                            <app-measure [measures]="restriction.measures"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                     }
                 </tbody>

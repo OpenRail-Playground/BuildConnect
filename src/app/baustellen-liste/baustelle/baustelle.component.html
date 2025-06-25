@@ -22,7 +22,7 @@
                         <tr>
                             <td class="label">Date</td>
                             <td>
-                                From: {{ constructionDossier.startDate | formatDateTime }}<br />
+                                From: {{ constructionDossier.startDate | formatDateTime }}<br>
                                 To: {{ constructionDossier.endDate | formatDateTime }}
                             </td>
                         </tr>
@@ -40,7 +40,7 @@
                 </table>
             </div>
             <div class="restrictions-section">
-                <h3>Kapazitätsbeschränkungen</h3>
+                <h3>Capacity Restrictions</h3>
                 <app-restriction [capacityRestrictions]="constructionDossier.restrictions" />
             </div>
             }
