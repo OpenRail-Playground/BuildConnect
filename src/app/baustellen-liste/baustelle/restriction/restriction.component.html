@@ -15,7 +15,9 @@
                     @for (restriction of capacityRestrictions ?? []; track restriction.id) {
                         <tr>
 
-                            <td>{{ restriction.startDate }} - {{ restriction.endDate }}</td>
+                            <td>{{ restriction.startDate | formatDateTime }}
+                                - {{ restriction.endDate | formatDateTime }}
+                            </td>
                             <td>{{ restriction.affectedRoute }}</td>
                             <td>{{ restriction.startMilage }} - {{ restriction.endMilage }}</td>
                             <td>{{ restriction.type }}</td>

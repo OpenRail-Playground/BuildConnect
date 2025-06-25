@@ -6,6 +6,7 @@ import {AsyncPipe} from '@angular/common'
 import {MatCard, MatCardContent, MatCardModule} from '@angular/material/card'
 import {MapComponent} from '../../map/map.component'
 import {RestrictionComponent} from './restriction/restriction.component'
+import {FormatDateTimePipe} from '../../../service/format-date-time.pipe'
 
 @Component({
     selector: 'app-baustelle',
@@ -18,6 +19,7 @@ import {RestrictionComponent} from './restriction/restriction.component'
         MatCard,
         MatCardContent,
         MatCardModule,
+        FormatDateTimePipe,
     ],
     templateUrl: './baustelle.component.html',
     styleUrl: './baustelle.component.scss'

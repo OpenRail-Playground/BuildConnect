@@ -24,7 +24,9 @@
                 </tr>
                 <tr>
                     <td>Date</td>
-                    <td>{{ constructionDossier.startDate }} - {{ constructionDossier.endDate }}</td>
+                    <td>{{ constructionDossier.startDate | formatDateTime }}
+                        - {{ constructionDossier.endDate | formatDateTime }}
+                    </td>
                 </tr>
                 <tr>
                     <td>Affected Sections</td>
