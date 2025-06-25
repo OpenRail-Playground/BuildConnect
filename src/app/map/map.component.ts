@@ -24,10 +24,10 @@ export class MapComponent implements OnInit {
 
         //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
+            attribution: 'Data <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, Style: <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a> <a href="http://www.openrailwaymap.org/">OpenRailwayMap</a>'
         }).addTo(map)
         L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
-            //attribution: '© OpenStreetMap'
+            attribution: '© OpenStreetMap'
         }).addTo(map)
 
         // Füge einen Marker an den dynamischen Koordinaten hinzu
