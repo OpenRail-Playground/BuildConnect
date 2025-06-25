@@ -1,7 +1,10 @@
-<h1>Baustelle</h1>
-@if (constructionDossier$ | async; as constructionDossier) {
-    <mat-card>
-        <mat-card-content>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Baustelle</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        @if (constructionDossier$ | async; as constructionDossier) {
             <table class="main-table">
                 <tbody>
                 <tr>
@@ -25,21 +28,27 @@
                     <td>{{ constructionDossier.status }}</td>
                 </tr>
                 <tr>
-                    <td>Karte</td>
+                    <td></td>
                     @if (getGeoPosition(constructionDossier.geoPosition); as geo) {
                         <app-map
                             [latitude]="geo.lat"
                             [longitude]="geo.lng"/>
                     }
                 </tr>
-                <tr>
-                    <td>Restrictions:</td>
-                    <td>
-                        <app-restriction [capacityRestrictions]="constructionDossier.restrictions"/>
-                    </td>
-                </tr>
                 </tbody>
             </table>
-        </mat-card-content>
-    </mat-card>
-}
+        }
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Baustelle</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                @if (constructionDossier$ | async; as constructionDossier) {
+                    <app-restriction [capacityRestrictions]="constructionDossier.restrictions"/>
+                }
+            </mat-card-content>
+        </mat-card>
+
+    </mat-card-content>
+</mat-card>

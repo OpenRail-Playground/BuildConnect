@@ -11,6 +11,7 @@ import {
 } from '@angular/material/table'
 import {AsyncPipe} from '@angular/common'
 import {ActivatedRoute, Router} from '@angular/router'
+import {MatCard, MatCardContent, MatCardHeader, MatCardModule} from '@angular/material/card'
 
 @Component({
     selector: 'app-baustellen-liste',
@@ -24,6 +25,10 @@ import {ActivatedRoute, Router} from '@angular/router'
         MatRowDef,
         AsyncPipe,
         MatTableModule,
+        MatCardHeader,
+        MatCard,
+        MatCardContent,
+        MatCardModule,
     ],
 })
 export class BaustelleListeComponent implements OnInit {

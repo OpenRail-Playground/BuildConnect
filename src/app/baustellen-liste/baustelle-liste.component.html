@@ -1,20 +1,26 @@
-<h1>Baustellen Liste</h1>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Baustellen</mat-card-title>
+    </mat-card-header>
 
-@if (mockDataList$ | async; as mockData) {
-    <table mat-table [dataSource]="mockData">
-        <tbody>
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>id</th>
-            <td mat-cell *matCellDef="let element"> {{ element.id }}</td>
-        </ng-container>
+    <mat-card-content>
+        @if (mockDataList$ | async; as mockData) {
+            <table mat-table [dataSource]="mockData">
+                <tbody>
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>id</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.id }}</td>
+                </ng-container>
 
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>name</th>
-            <td mat-cell *matCellDef="let element"> {{ element.name }}</td>
-        </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>name</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.name }}</td>
+                </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row (click)="onClickRow(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
-        </tbody>
-    </table>
-}
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row (click)="onClickRow(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                </tbody>
+            </table>
+        }
+    </mat-card-content>
+</mat-card>

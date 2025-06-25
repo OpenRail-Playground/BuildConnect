@@ -3,7 +3,7 @@ import {BehaviorSubject} from 'rxjs'
 import {ConstructionDossier, MockDataService} from '../../../service/mock-data.service'
 import {ActivatedRoute} from '@angular/router'
 import {AsyncPipe} from '@angular/common'
-import {MatCard, MatCardContent} from '@angular/material/card'
+import {MatCard, MatCardContent, MatCardModule} from '@angular/material/card'
 import {MapComponent} from '../../map/map.component'
 import {RestrictionComponent} from './restriction/restriction.component'
 
@@ -15,7 +15,9 @@ import {RestrictionComponent} from './restriction/restriction.component'
         MatCardContent,
         MapComponent,
         RestrictionComponent,
-
+        MatCard,
+        MatCardContent,
+        MatCardModule,
     ],
     templateUrl: './baustelle.component.html',
     styleUrl: './baustelle.component.scss'
