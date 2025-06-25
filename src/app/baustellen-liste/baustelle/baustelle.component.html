@@ -2,14 +2,14 @@
 
     <mat-card class="baustelle-card">
         <mat-card-header>
-            <mat-card-title>Baustelle Details</mat-card-title>
+            <mat-card-title>Construction Site Details</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
             @if (constructionDossier$ | async; as constructionDossier) {
-            <div class="baustelle-details">
-                <table class="main-table">
-                    <tbody>
+                <div class="baustelle-details">
+                    <table class="main-table">
+                        <tbody>
                         <tr>
                             <td class="label">Id</td>
                             <td>{{ constructionDossier.id }}</td>
@@ -36,13 +36,13 @@
                                 <span class="status-chip">{{ constructionDossier.status }}</span>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="restrictions-section">
-                <h3>Capacity Restrictions</h3>
-                <app-restriction [capacityRestrictions]="constructionDossier.restrictions" />
-            </div>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="restrictions-section">
+                    <h3>Capacity Restrictions</h3>
+                    <app-restriction [capacityRestrictions]="constructionDossier.restrictions"/>
+                </div>
             }
         </mat-card-content>
     </mat-card>
@@ -53,9 +53,9 @@
         </mat-card-header>
         <mat-card-content>
             @if (constructionDossier$ | async; as constructionDossier) {
-            @if (getGeoPosition(constructionDossier.geoPosition); as geo) {
-            <app-map [latitude]="geo.lat" [longitude]="geo.lng" />
-            }
+                @if (getGeoPosition(constructionDossier.geoPosition); as geo) {
+                    <app-map [latitude]="geo.lat" [longitude]="geo.lng"/>
+                }
             }
         </mat-card-content>
     </mat-card>

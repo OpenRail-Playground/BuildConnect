@@ -73,6 +73,7 @@ app-map,
     background: #c8e6c9;
     color: #388e3c;
 }
+
 .status-chip.closed {
     background: #ffcdd2;
     color: #d32f2f;
@@ -93,8 +94,8 @@ app-map,
 
 
 .container {
-	display: flex;
-	justify-content: center;
-	align-items: stretch;
-	align-content: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
 }
