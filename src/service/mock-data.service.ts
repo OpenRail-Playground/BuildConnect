@@ -12,7 +12,7 @@ export class MockDataService {
         return [
             <ConstructionDossier>{
                 id: "DE-1234",
-                name: "Strecke 0815 gespert",
+                name: "Strecke 0815 gesperrt",
                 startDate: "2025-06-01T21:00:00+02:00",
                 endDate: "2025-06-30T21:00:00+02:00",
                 affectedSection: "Section 1-2",
@@ -48,7 +48,7 @@ export class MockDataService {
             },
             <ConstructionDossier>{
                 id: "DE-0815",
-                name: "Strecke 0815 gespert",
+                name: "Strecke 0815 gesperrt",
                 startDate: "2025-06-01T21:00:00+02:00",
                 endDate: "2025-06-30T21:00:00+02:00",
                 affectedSection: "Section 1-2",
