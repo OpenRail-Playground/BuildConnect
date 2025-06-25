@@ -41,10 +41,6 @@ export class BaustelleComponent implements OnInit {
             })
     }
 
-    private hasGeoPosition(geoPosition?: string): boolean {
-        return geoPosition !== undefined && geoPosition.trim() !== '' && geoPosition.includes(',')
-    }
-
     getGeoPosition(geoPosition?: string): { lat: number, lng: number } | undefined {
 
         if (!geoPosition) return undefined
@@ -52,5 +48,9 @@ export class BaustelleComponent implements OnInit {
 
         const [lat, lng] = geoPosition.split(',').map(Number)
         return {lat, lng}
+    }
+
+    private hasGeoPosition(geoPosition?: string): boolean {
+        return geoPosition !== undefined && geoPosition.trim() !== '' && geoPosition.includes(',')
     }
 }

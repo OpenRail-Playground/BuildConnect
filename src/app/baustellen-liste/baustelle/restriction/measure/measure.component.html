@@ -1,17 +1,19 @@
 <table>
-    @for (measure of measures ?? []; track measure.id) {
+    <tbody>
+        @for (measure of measures ?? []; track measure.id) {
 
-        <tr>
-            <td>affectedTrains</td>
-            <td>{{ measure.affectedTrains }}</td>
-        </tr>
-        <tr>
-            <td>actionType</td>
-            <td>{{ measure.actionType }}</td>
-        </tr>
-        <tr>
-            <td>description</td>
-            <td>{{ measure.description }}</td>
-        </tr>
-    }
+            <tr>
+                <td>affectedTrains</td>
+                <td>{{ measure.affectedTrains }}</td>
+            </tr>
+            <tr>
+                <td>actionType</td>
+                <td>{{ measure.actionType }}</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>{{ measure.description }}</td>
+            </tr>
+        }
+    </tbody>
 </table>
