@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import * as L from 'leaflet'
-import {Icon, icon} from 'leaflet'
+import { Icon, icon } from 'leaflet'
 
 @Component({
     selector: 'app-map',
@@ -16,13 +16,14 @@ export class MapComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        var zoomLevel = 10;
         // Initialisiere die Karte mit dynamischen Koordinaten
-        const map = L.map('map').setView([this.latitude, this.longitude], 13)
+        const map = L.map('map').setView([this.latitude, this.longitude], zoomLevel)
 
         // Füge eine OpenStreetMap-Kachel-Ebene hinzu
 
         //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap'
         }).addTo(map)
         L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
