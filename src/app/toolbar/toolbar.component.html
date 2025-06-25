@@ -1,14 +1,12 @@
 <mat-toolbar class="toolbar-format">
     <mat-toolbar-row class="nav-width">
-        <span class="toolbar-headline">Nutzt KI</span>
+        <img src="buildconnectlogo.png" alt="Logo" />
+
         <span class="example-spacer"></span>
-        <button [routerLink]="'./baustelle'" mat-button
-                routerLinkActive='nav-selected'
-        >Baustellen
-        </button>
-        <button [routerLink]="'./about'" mat-button
-                routerLinkActive='nav-selected'
-        >About
+        
+        <button mat-button >Baustellen</button>
+
+        <button [routerLink]="'./about'" mat-button routerLinkActive='nav-selected'>About
         </button>
     </mat-toolbar-row>
 </mat-toolbar>
